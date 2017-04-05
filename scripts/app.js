@@ -1,6 +1,6 @@
 console.log('working js');
 
-var myOffset = 0;
+var gifOffset = 0;
 
 $(document).on("ready", function(){
 
@@ -43,7 +43,7 @@ $(document).on("ready", function(){
 
 		}
 
-		myOffset += 25;
+		gifOffset += 25;
 
 		document.getElementById('loadMore').style.display = "block";
 
@@ -59,7 +59,7 @@ $(document).on("ready", function(){
 			$.ajax({
 				method: "GET",
 				url: 'http://api.giphy.com/v1/gifs/search',
-				data: $("form").serialize() + '&limit=100' + '&offset=' + myOffset,
+				data: $("form").serialize() + '&limit=100' + '&offset=' + gifOffset,
 				dataType: 'json',
 				success: onSuccess,
 				error: onError,
@@ -85,7 +85,7 @@ $(document).on("ready", function(){
 
 		}
 
-		myOffset += 25;
+		gifOffset += 25;
 
 	});
 
